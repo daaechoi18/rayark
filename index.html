@@ -29,6 +29,7 @@
   <style>
     .skip>a{position:fixed;top:-110%;padding:1.6rem;font-size:1.8rem;font-weight:500;background-color:#FAD238;transition:0.3s;}
     .skip>a:focus{top:0;}
+    h4.hide_box_tit{width:0;height:0;overflow:hidden;}
 
     .container{width:100%;max-width:1600px;margin:0 auto;padding:36px 15px;display:flex;flex-direction:column;justify-content:center;align-items:center;}
 
@@ -47,7 +48,7 @@
     .nav a,.nav p,.nav i{color:#fff;}
     .nav_container{flex-direction:column;}
     .nav_top{width:100%;margin-bottom:25px;display:flex;justify-content:space-between;align-items:center;}
-    .nav .main_menu{width:100%;padding:0 40px;display:flex;flex-flow:row wrap;}
+    .nav .main_menu{width:100%;padding:0 18.111111vw;display:flex;flex-flow:row wrap;}
     .nav .main_menu li{width:50%;padding-bottom:38px;}
     .nav .main_menu li:first-child{width:100%;}
     .nav .main_menu li a{letter-spacing:2px;transition:0.3s;}
@@ -92,11 +93,11 @@
     
     .updated .container{overflow:hidden;}
     .updated .sec_tit,.career_tit{width:300px;margin-bottom:-34px;font-size:16vw;font-weight:700;line-height:20vw;align-self:start;}
-    .games_wrap{width:100%;height:96.38888888888889vw;position:relative;}
-    .games_wrap::after{content:'';width:100%;height:100%;background-color:#FAD238;position:absolute;top:15px;left:15px;z-index:-2;}
+    .games_wrap{width:100%;height:96.38888888888889vw;position:relative}
+    .games_wrap::after{content:'';width:100%;height:100%;background-color:#FAD238;position:absolute;top:15px;right:-15px;z-index:-2;}
     .games_container{width:300%;height:100%;display:flex;align-self:flex-start;position:relative;z-index:-1;}
     .game{position:relative;width:33.33333333%;height:100%;opacity:0;transition:opacity 0.5s;}
-    .game01 .game_img{background-image:url(./img/banner_02.jpg);}
+    .game01 .game_img{background-image:url(./img/banner_02.jpg);background-position:right;}
     .game02 .game_img{background-image:url(./img/banner_04.jpg);}
     .game03 .game_img{background-image:url(./img/banner_05.jpg);}    
     .game_content{position:absolute;left:0;right:0;top:50%;bottom:0;background:url(./img/game_txt_background.png) bottom repeat no-repeat;display: flex;flex-direction: column;justify-content: flex-end;padding: 1rem;}
@@ -213,7 +214,7 @@
 
       .career_content{order:1;flex-direction:row;justify-content: space-around;}
       .career .txt_box{order:1;width:27.80692549842602%;margin-right:2.407135%;margin-bottom:42px;}
-      .career .txt{font-size:1.714099vw;line-height:3.3.225378vw;}
+      .career .txt{font-size:1.714099vw;line-height:3.225378vw;}
       .btn_career a{font-size:22px;}
       .career .img_box{order:2;width:60%;margin-bottom:0;}
       .career .tit_box{order:2;margin-bottom:34px;}
@@ -295,6 +296,7 @@
     <a href="#careers">Careers</a>
   </div>
   <section class="warp">
+    <h4 class="hide_box_tit">wrap</h4>
     <header class="header">
       <div class="container">
         <div class="btn_nav_o">
@@ -392,6 +394,7 @@
       </div>
     </header>
     <section class="section slider_1st">
+      <h4 class="hide_box_tit">slider_1st</h4>
       <div class="container">
         <div class="slider_container">
           <div class="slide slide01 fade_in">
@@ -554,6 +557,7 @@
           <h2 class="sec_tit career_tit">Rayark Wants You</h2>
         </div>
         <article class="career_content">
+          <h4 class="hide_box_tit">career content</h4>
           <div class="img_box">
             <img src="./img/career.jpg" alt="career">
           </div>
@@ -571,87 +575,88 @@
       </div>
     </section>
     <footer class="footer">
-        <div class="footer_top">
-          <div class="container">
-            <div class="left">
-              <div class="footer_logo mo_hide">
-                <img src="./img/logo_w.png" alt="Rayark">
-              </div>
-              <div class="inc_txt mo_hide">
-                <p>
-                  Rayark is a gaming company located in Taipei, working hard at developing original IPs for players to enjoy. We hope our insistence on the highest of standards and the layers of experience we provide are able to convey the rich and enticing values the gaming industry has to offer, as well as touch our players on a deep level. If you wish to know more, feel free to contact us.
-                </p>
-              </div>
-              <div class="email">
-                <a href="mailto:service@rayark.com">
-                  service@rayark.com<i class="fas fa-long-arrow-alt-right mo_hide"></i>
+      <div class="footer_top">
+        <div class="container">
+          <div class="left">
+            <div class="footer_logo mo_hide">
+              <img src="./img/logo_w.png" alt="Rayark">
+            </div>
+            <div class="inc_txt mo_hide">
+              <p>
+                Rayark is a gaming company located in Taipei, working hard at developing original IPs for players to enjoy. We hope our insistence on the highest of standards and the layers of experience we provide are able to convey the rich and enticing values the gaming industry has to offer, as well as touch our players on a deep level. If you wish to know more, feel free to contact us.
+              </p>
+            </div>
+            <div class="email">
+              <a href="mailto:service@rayark.com">
+                service@rayark.com<i class="fas fa-long-arrow-alt-right mo_hide"></i>
+              </a>
+            </div>
+          </div>
+          <div class="right">
+            <ul class="footer_menu tab_flex">
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="#">News</a>
+              </li>
+              <li class="menu_game">
+                <a href="#">Games</a>
+                <ul class="game_names">
+                  <li><a href="#">Soul of Eden</a></li>
+                  <li><a href="#">DEEMO -Reborn-</a></li>
+                  <li><a href="#">MO:Astray</a></li>
+                  <li><a href="#">Cytus α</a></li>
+                  <li><a href="#">Sdorica</a></li>
+                  <li><a href="#">...more</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Careers</a>
+              </li>
+              <li>
+                <a href="#">Events</a>
+              </li>
+              <li>
+                <a href="#">Support</a>
+              </li>
+              <li>
+                <a href="#">Store</a>
+              </li>
+              <li>
+                <a href="#">RayarkPass</a>
+              </li>
+            </ul>
+            <div class="also_sns">
+              <div class="also mo_hide">
+                <h3 class="tit">See Also...</h3>
+                <a href="#">
+                  Terms of use<br>
+                  & Privacy policy
                 </a>
               </div>
+              <div class="sns_box">
+                <h3 class="tit mo_hide">Find Us On</h3>
+                <ul class="sns">
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+              </div>              
             </div>
-            <div class="right">
-              <ul class="footer_menu tab_flex">
-                <li>
-                  <a href="index.html">Home</a>
-                </li>
-                <li>
-                  <a href="#">News</a>
-                </li>
-                <li class="menu_game">
-                  <a href="#">Games</a>
-                  <ul class="game_names">
-                    <li><a href="#">Soul of Eden</a></li>
-                    <li><a href="#">DEEMO -Reborn-</a></li>
-                    <li><a href="#">MO:Astray</a></li>
-                    <li><a href="#">Cytus α</a></li>
-                    <li><a href="#">Sdorica</a></li>
-                    <li><a href="#">...more</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-                <li>
-                  <a href="#">Events</a>
-                </li>
-                <li>
-                  <a href="#">Support</a>
-                </li>
-                <li>
-                  <a href="#">Store</a>
-                </li>
-                <li>
-                  <a href="#">RayarkPass</a>
-                </li>
-              </ul>
-              <div class="also_sns">
-                <div class="also mo_hide">
-                  <h3 class="tit">See Also...</h3>
-                  <a href="#">
-                    Terms of use<br>
-                    & Privacy policy
-                  </a>
-                </div>
-                <div class="sns_box">
-                  <h3 class="tit mo_hide">Find Us On</h3>
-                  <ul class="sns">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                  </ul>
-                </div>              
-              </div>
-            </div>
-          </div>            
-        </div>
-        <div class="footer_bottom">
-          <div class="container">
-            <address>
-              <a href="#">Terms of use & Privacy policy</a>    
-              <p>© 2021 Rayark Inc. All rights reserved.</p>        
-            </address>
           </div>
+        </div>            
+      </div>
+      <div class="footer_bottom">
+        <div class="container">
+          <address>
+            <a href="#">Terms of use & Privacy policy</a>    
+            <p>© 2021 Rayark Inc. All rights reserved.</p>        
+          </address>
         </div>
+      </div>
+    </footer>
   </section>
   <script>
     $('.btn_nav_o').on('click',function(){
