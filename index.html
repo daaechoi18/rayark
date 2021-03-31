@@ -26,266 +26,9 @@
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/index.min.css">
   <style>
-    .skip>a{position:fixed;top:-110%;padding:1.6rem;font-size:1.8rem;font-weight:500;background-color:#FAD238;transition:0.3s;}
-    .skip>a:focus{top:0;}
-    h4.hide_box_tit{width:0;height:0;overflow:hidden;}
-
-    .container{width:100%;max-width:1600px;margin:0 auto;padding:36px 15px;display:flex;flex-direction:column;justify-content:center;align-items:center;}
-
-    .header{position:fixed;left:0;right:0;top:0;z-index:9999;background-color:#fff;}
-    .header .container,.nav_container{margin:0 auto;padding:25px 15px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;}
-
-    .header img{width:auto;display:none;}
-    .main_logo img.big,.nav_logo img{height:70px;display:block;}
-    .main_logo img.scroll{height:40px;display:none;}
-    .header.scroll img.big{display:none;}
-    .header.scroll img.scroll{display:block;}
-    .btn_nav_o i,.btn_nav_c i{font-size:26px;}
-
-    .nav{position:fixed;left:-100%;right:100%;top:0;bottom:0;background-color:#000e;transition:left 0.5s,right 0.5s,transform 0.5s;}
-    .nav.open{left:0;right:0;}
-    .nav a,.nav p,.nav i{color:#fff;}
-    .nav_container{flex-direction:column;}
-    .nav_top{width:100%;margin-bottom:25px;display:flex;justify-content:space-between;align-items:center;}
-    .nav .main_menu{width:100%;padding:0 18.111111vw;display:flex;flex-flow:row wrap;}
-    .nav .main_menu li{width:50%;padding-bottom:38px;}
-    .nav .main_menu li:first-child{width:100%;}
-    .nav .main_menu li a{letter-spacing:2px;transition:0.3s;}
-    .nav .main_menu li a:hover{color:#FAD238;}
-
-    .nav .nav_bottom{width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;}
-    .nav_sns{width:61.81818181818182%;border-top:2px solid #fff;padding:26px 0;}
-    .nav_sns h2{display:none;}
-    .nav_sns .sns,.nav .langs{width:100%;display:flex;flex-direction:row;justify-content:space-between;align-items:center;}
-    .nav_sns .sns a{font-size:22px;}
-    .nav_copy{margin-bottom:30px;}
-    .nav_copy p{text-align:center;font-size:14px;font-weight:300;}
-    .nav .sel_lang{width:100%;display:flex;justify-content:space-between;padding:0 11.11111111111111vw 0 16.66666666666667vw}
-    .nav .lang_ico{width:10%;font-size:30px;}
-    .nav .langs{width:90%;display:flex;}
-    .nav .langs li{width:25%;border-right:2px solid #fff;text-align:center;}
-    .nav .langs li:last-child{border:none;}
-    .nav .langs li a{font-size:20px;}
-
-    .slider_1st{margin-top:120px;}
-    .slider_1st .container,.sec_passion .container{padding:0 0 36px;}
-    .slider_1st .container{overflow:hidden;}
-    .slider_1st .slider_container{width:500%;height:317px;padding:0;align-self:flex-start;overflow:hidden;position:relative;display:flex;}
-    .slider_1st .slide{position:relative;width:20%;height:100%;opacity:0;}
-    .slider_1st .slide.fade_in,.game.fade_in{opacity:1;transition:opacity 0.5s;}
-    .slider_1st .slide .slide_img,.game .game_img{position:absolute;left:0;right:0;top:0;bottom:0;background-repeat:no-repeat;background-position:center;background-size:cover;}
-    .slider_1st .slide01 .slide_img{background-image:url(./img/banner_01.jpg);}
-    .slider_1st .slide02 .slide_img{background-image:url(./img/banner_02.jpg);}
-    .slider_1st .slide03 .slide_img{background-image:url(./img/banner_03.jpg);}
-    .slider_1st .slide04 .slide_img{background-image:url(./img/banner_04.jpg);}
-    .slider_1st .slide05 .slide_img{background-image:url(./img/banner_05.jpg);}
-    .slider_1st .btn_more{position:absolute;left:15px;bottom:15px;width:160px;height:40px;background-color:#FAD238dd;text-align:center;line-height:40px;}
-    .slider_1st .btn_more a{font-size:18px;font-weight:500;letter-spacing:3px;}
     
-    .paginations{margin:5.5555555vw 0 20px;}
-    .pagination{width:2.777777777777778vw;height:2.777777777777778vw;margin-right:14px;border-radius:50%;background-color:#ddd;display:inline-block;position:relative;transition:0.3s;}
-    .pagination:last-child{margin-right:0;}
-    .pagination.active::after{content:'';width:5.555555555555556vw;height:5.555555555555556vw;border:1px solid #FAD238;border-radius:50%;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);transition:0.3s;}
-    .pagination.active{background-color:#FAD238;}
-    .btn_scroll{cursor:pointer;height:9.722222222222222vw;}
-    .btn_scroll::before{content:'';border:1px solid #000;border-top:none;border-left:none;width:7.777777777777778vw;height:7.777777777777778vw;transform:rotate(45deg);}
-    
-    .updated .container{overflow:hidden;}
-    .updated .sec_tit,.career_tit{width:300px;margin-bottom:-34px;font-size:16vw;font-weight:700;line-height:20vw;align-self:start;}
-    .games_wrap{width:100%;height:96.38888888888889vw;position:relative}
-    .games_wrap::after{content:'';width:100%;height:100%;background-color:#FAD238;position:absolute;top:15px;right:-15px;z-index:-2;}
-    .games_container{width:300%;height:100%;display:flex;align-self:flex-start;position:relative;z-index:-1;}
-    .game{position:relative;width:33.33333333%;height:100%;opacity:0;transition:opacity 0.5s;}
-    .game01 .game_img{background-image:url(./img/banner_02.jpg);background-position:right;}
-    .game02 .game_img{background-image:url(./img/banner_04.jpg);}
-    .game03 .game_img{background-image:url(./img/banner_05.jpg);}    
-    .game_content{position:absolute;left:0;right:0;top:50%;bottom:0;background:url(./img/game_txt_background.png) bottom repeat no-repeat;display: flex;flex-direction: column;justify-content: flex-end;padding: 1rem;}
-    .game_tag{margin-bottom:1rem;}
-    .game_tag p{color:#FAD238;display:inline-block;}
-    .game_tag .date{font-weight:700;font-style:italic;}
-    .game_tag .tag{font-size:14px;}    
-    .game_tit strong{font-size:4.5vw;font-weight:700;color:#fff;}
-    .game_txt,.game_content .btn_arrow{display:none;}
-    .updated .paginations{margin-top:8.055555555vw;}
-
-    .sec_passion .container{position:relative;width:100%;}
-    .sec_passion .txt_box{width:71.88888888888889%;padding:24px 18px;background-color:#FAD238;position:absolute;right:0;top:109.4444vw;}
-    .sec_passion .passions_tit{font-size:9vw;font-weight:700;}
-    .sec_passion .txt{display:none;}
-    .passions_wrap{width:100%;height:100%;overflow:hidden;}
-    .passions_container{width:300%;height:117.5vw;position:relative;align-self:flex-start;display:flex;}
-    .passion{position:relative;width:33.3333333%;height:100%;z-index:-1;opacity:0;transition:0.5s;}
-    .passion.fade_in{opacity:1;transition:0.5s;}
-    .passion_img{position:absolute;left:0;right:0;top:0;bottom:0;background:no-repeat center;background-size:cover;}
-    .passion01 .passion_img{background-image:url(./img/sub_slider01.jpg);}
-    .passion02 .passion_img{background-image:url(./img/sub_slider02.jpg);}
-    .passion03 .passion_img{background-image:url(./img/sub_slider03.png);}
-    .passion_tit{position:absolute;left:4vw;top:4vw;}
-    .passion_tit h3{font-size:5vw;font-weight:500;color:#fff;}
-    .sec_passion .paginations{margin-top:33vw;}
-
-    .career .tit_box{align-self:flex-start;position:relative;}
-    .career .tit_box::after{content:'';width:71.86111111111111vw;height:20.55555555555556vw;background-color:#FAD238;position:absolute;top:30%;right:-15px;z-index:-1;}
-    .career_tit{width:auto;margin-bottom:auto;}
-    .career_content{display:flex;flex-direction:column;}
-    .career .img_box{width:100%;margin-bottom:22px;}
-    .career .txt{font-size:18px;line-height:28px;margin-bottom:38px;}
-    .btn_career a{font-size:20px;font-weight:500;text-decoration:underline;}
-    .btn_career a:hover{text-decoration:none;}
-    .btn_career i{margin-left:1rem;color:#FAD238;}
-
-    .footer .container{padding:0;}
-    .footer p,.footer a,.footer h3{color:#fff;}
-    .footer .mo_hide,.footer .tab_flex{display:none;}
-    .footer_top{background-color:#000;}
-    .footer_top .container{padding:16.6667vw;display:flex;flex-flow:column;justify-content:center;}
-    .footer .right{order:1;}
-    .footer .left{order:2;}
-    .footer .sns{display:flex;justify-content:space-between;width:66.66666666666667vw;margin-bottom:7.222222222222222vw;}
-    .footer .sns a{font-size:6.111111111111111vw;}
-    .footer .email a{font-size:3.888888888888889vw;text-align:center;}
-    .footer_bottom .container{padding:7.5vw 0;}
-    .footer_bottom a,.footer_bottom p{color:#000;text-align:center;}
-    .footer_bottom a{text-decoration:underline;}
-    .footer_bottom p{font-weight:300;}
-
-    @media(min-width:993px){
-      .container{padding:42px 80px;}
-
-      .main_logo{width:150px;}
-      .main_logo img.big{width:100%;}
-      .btn_nav_o,.btn_nav_c,.nav_logo,.nav .main_menu li:first-child,.nav_copy,.nav .lang_ico,.games_wrap::after,.updated .paginations,.footer_bottom a{display:none;}
-      .nav{position:static;background-color:transparent;}
-      .nav_container,.nav_top,.nav .main_menu li{margin:0;padding:0;}
-      .nav .main_menu{width:740px;padding:0;flex-wrap:nowrap;justify-content:space-between;}
-      .nav .main_menu li{text-align:center;}
-      .nav .main_menu li a,.nav_sns .sns a i,.nav .langs li a{color:#000;font-size:1rem;}
-      .nav .main_menu li a{position:relative;z-index:10;}
-      .nav .main_menu li a::after{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);background-color:#FAD238;width:100%;height:8px;z-index:-1;opacity:0;transition:0.3s;}
-      .nav .main_menu li a:hover{color:#000;}
-      .nav .main_menu li a:hover::after{opacity:1;}
-
-      .nav_sns,.nav .langs{justify-content:space-between;align-items:center;position:fixed;top:50%;}
-
-      .nav_sns{border-top:none;display:flex;width:234px;left:20px;transform:translate(-50%,-50%) rotate(-90deg);}
-      .nav_sns h2{display:block;letter-spacing:3px;}
-      .nav_sns .sns{width:114px;}
-
-      .nav .langs{height:147px;width:auto;flex-direction:column;right:20px;transform:translateY(-50%);}
-      .nav .langs li{width:auto;height:44px;line-height:44px;text-align: center;border-right:none;border-bottom:2px solid #000;}
-      
-      .slider_1st .container,.sec_passion .container{padding:0 80px 42px;}
-      .slider_1st .slider_container{height:42vw;}
-      .slider_1st .btn_more{left:50%;top:75%;transform:translateX(-50%);bottom:42px;}
-      .paginations{margin:2.819738167170191vw 0;}
-      .pagination{width:15px;height:15px;margin-right:18px;}
-      .pagination.active::after{width:30px;height:30px;}
-      .btn_scroll{height:35px;}
-      .btn_scroll::before{width:28px;height:28px;}
-
-      .updated .sec_tit{width:auto;font-size:124px;line-height:124px;margin-bottom:auto;}
-      .games_wrap{height:auto;position:static;}
-      .games_container{margin-top:42px;width:100%;height:auto;position:static;justify-content:space-between;}
-      .game{position:relative;width:30%;max-width:460.41px;opacity:1;}
-      .game03{margin-right:0;}
-      .game .game_img{position:static;width:100%;height:16.01208459214502vw;max-height:256.19px;}
-      .game_content{position:static;background:none;display:block;padding:0;}
-      .game_tag{position:absolute;left:-10px;top:13vw;width:200px;height:52px;background-color:#FAD238;text-align:center;}
-      .game_tag p{color:#000;line-height:52px;}
-      .game_tit{margin:2rem 0 24px;}
-      .game_tit strong{font-size:24px;font-weight:700;color:#000;} 
-      .game_txt,.game_content .btn_arrow{display:block;}
-      .game_txt{font-size:1rem;line-height:28px;margin-bottom:24px;}
-      .game_content .btn_arrow i{font-size:24px;color:#FAD238;}
-      .updated .btn_scroll{margin-top:35px;}
-
-      .passions_wrap::after{content:'';position:absolute;height:43.5vw;left:60px;right:59%;top:20px;background-color:#FAD238aa;z-index:-2}
-      .sec_passion .txt_box{width:32.72910372608258%;padding:2.884615384615385vw  2.692307692307692vw;top:4.431017119838872vw;right:80px;}
-      .sec_passion .passions_tit{margin-bottom:28px;font-size:3.826787512588117vw;}
-      .sec_passion .txt{display:block;font-size:18px;line-height:24px;}
-      
-      .passions_container{height:43.32326283987915vw;}
-      
-      .passion_tit{margin-left:-1rem;padding:7rem 0 ;width:154px;top:0;bottom:0;left:-24px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;;}
-      .passion_tit h3{font-size:18px;transform:rotate(-90deg);}
-      .passion_tit::after{content:'';height:68%;width:1px;background:#fff;}
-      .sec_passion .paginations{margin-top:28px;}
-
-      .career_content{order:1;flex-direction:row;justify-content: space-around;}
-      .career .txt_box{order:1;width:27.80692549842602%;margin-right:2.407135%;margin-bottom:42px;}
-      .career .txt{font-size:1.714099vw;line-height:3.225378vw;}
-      .btn_career a{font-size:22px;}
-      .career .img_box{order:2;width:60%;margin-bottom:0;}
-      .career .tit_box{order:2;margin-bottom:34px;}
-      .career_tit{font-size:9.466263846928499vw;width:47.50251762336354vw;line-height:10.27190332326284vw;}
-      .career .tit_box::after{width:48.89224572004028vw;height:7.049345417925478vw;top:auto;right:auto;left:-80px;bottom:-1.510574018126888vw;}
-      
-      .footer .mo_hide{display:block;}
-      .footer .tab_flex{display:flex;}
-      .footer_bottom .container{padding:4.229607250755287vw 0;}
-      .footer_bottom p{font-size:1.208459214501511vw;}
-
-      .footer_top{background-color:#282828;}
-      .footer_top .container{height:34vw;padding:4.229607250755287vw 2.014098690835851vw;flex-direction:row;justify-content:space-between;}
-      .footer .left{order:1;width:31.47953830010493%;}
-      .footer_logo{width:46.22950819672131%;margin-bottom:2.014098690835851vw;}
-      .inc_txt{margin-bottom:2.618328298086606vw;}
-      .inc_txt p{font-size:1.208459214501511vw;line-height:2.014098690835851vw;}
-      .footer .email a{font-size:1.812688821752266vw;font-weight:500;text-align:left;display:inline-block;}
-      .footer .email i{margin-left:1.2vw;display:inline-block;}
-
-      .footer .right{order:2;width:65.89716684155299%;display:flex;justify-content:space-between;}
-      .footer_menu{display:flex;flex-flow:column wrap;width:46.73248407643312%;}
-      .footer_menu>li{width:20%;}
-      .footer_menu>li>a,.also_sns .tit{font-size:1.611278952668681vw;letter-spacing:0.2014098690835851vw;}
-      .footer_menu>.menu_game{height:100%;width:40%;}
-      .game_names{margin-left:0.8vw;}
-      .game_names>li{margin-top:0.8vw;}
-      .game_names a,.also a{font-size:1.409869083585096vw;letter-spacing:0.05vw;}
-      .also_sns{width:35.6687898089172%;display:flex;flex-direction:column;justify-content:space-between;}
-      .also_sns .tit{margin-bottom:1vw;font-size:2.014098690835851vw;font-weight:700;}
-      .also a{line-height:1.812688821752266vw;}
-      .footer .sns{width:100%;}
-      .footer .sns a{font-size:3.021148036253776vw;}
-    }
-    @media(min-width:1400px){
-      .nav_sns{left:3%;}
-      .nav .langs{right:3%;}
-      .slider_1st .slider_container{height:45vw;max-height:720px;}
-      .slider_1st .btn_more{top:60%;}
-      .paginations{margin:42px 0;}
-      .pagination{width:22px;height:22px;margin-right:26px;}
-      .pagination.active::after{width:44px;height:44px;}
-      .sec_passion .txt_box{padding:30px 28px;top:auto;bottom:11vw;}
-      .career .txt{font-size:24px;line-height:40px;}
-      .career_tit{font-size:118px;width:700px;line-height:140px;}
-      .career .tit_box::after{width:700px;height:90px;left:-80px;bottom:28px;}
-
-      .footer .container{padding:42px 80px;}
-      .footer_bottom p{font-size:14px;}
-      .footer_top .container{height:480px;}
-      .footer_logo{width:180px;margin-bottom:24px;}
-      .inc_txt{margin-bottom:2rem;}
-      .inc_txt p{font-size:14px;line-height:24px;}
-      .footer .email a{font-size:22px;}
-      .footer .email i{margin-left:1rem;}
-      .footer_menu>li>a,.also_sns .tit{font-size:18px;letter-spacing:3px;}
-      .game_names{margin-left:0.8rem;}
-      .game_names>li{margin-top:0.8rem;}
-      .game_names a,.also a{font-size:16px;letter-spacing:1px;}
-      .also_sns .tit{margin-bottom:14px;font-size:28px}
-      .also a{line-height:24px;}
-      .footer .sns{margin:2rem 0 0;}
-      .footer .sns a{font-size:36px;}
-    }
-    @media(min-width:1750px){
-      .game_tag{position:absolute;left:-10px;top:220px;width:200px;height:52px;background-color:#FAD238;text-align:center;}
-      .passions_container,.passions_wrap::after{max-height:666px;}
-      .sec_passion .txt_box{bottom:100px;}
-      .sec_passion .passions_tit{font-size:58px;}
-      .sec_passion .txt{font-size:22px;line-height:28px;}
-    }
   </style>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/prefixfree.min.js"></script>
@@ -393,7 +136,7 @@
         </nav>
       </div>
     </header>
-    <section class="section slider_1st">
+    <section class="section section1 slider_1st">
       <h4 class="hide_box_tit">slider_1st</h4>
       <div class="container">
         <div class="slider_container">
@@ -435,10 +178,10 @@
           <li class="pagination page04"></li>
           <li class="pagination page05"></li>
         </ul>
-        <div class="btn_scroll"></div>
+        <div class="btn_scroll" id="scroll01"></div>
       </div>
     </section>
-    <section class="section updated" id="updated">
+    <section class="section section2 updated" id="updated">
       <div class="container">
         <h2 class="sec_tit">Stay Updated</h2>
         <div class="games_wrap">
@@ -510,10 +253,10 @@
           <li class="pagination page02"></li>
           <li class="pagination page03"></li>
         </ul>
-        <div class="btn_scroll"></div>
+        <div class="btn_scroll" id="scroll02"></div>
       </div>
     </section>
-    <section class="section sec_passion">
+    <section class="section section3 sec_passion">
       <div class="container">
         <div class="txt_box">
           <h2 class="sec_tit passions_tit">A Passion for Games</h2>
@@ -548,10 +291,10 @@
           <li class="pagination page02"></li>
           <li class="pagination page03"></li>
         </ul>
-        <div class="btn_scroll"></div>
+        <div class="btn_scroll" id="scroll03"></div>
       </div>
     </section>
-    <section class="section career" id="career">
+    <section class="section section4 career" id="career">
       <div class="container">
         <div class="tit_box">
           <h2 class="sec_tit career_tit">Rayark Wants You</h2>
@@ -658,23 +401,9 @@
       </div>
     </footer>
   </section>
+  <script src="./js/ui.min.js"></script>
+  <script src="./js/index.min.js"></script>
   <script>
-    $('.btn_nav_o').on('click',function(){
-      $('.nav').addClass('open');
-    });
-    $('.btn_nav_c').on('click',function(){
-      $('.nav').removeClass('open');
-    });
-    $(window).scroll(function(){
-      let winScr = $(window).scrollTop();
-      console.log(winScr);
-      if(winScr>80){
-        $('.header').addClass('scroll');
-      }else{
-        $('.header').removeClass('scroll');
-      }
-      
-    })
-  </script>  
+    </script>  
 </body>
 </html>
